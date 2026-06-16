@@ -16,7 +16,7 @@ interface FormErrors {
 
 export default function Contact() {
   const revealRef = useScrollReveal<HTMLDivElement>();
-  
+
   const [form, setForm] = useState<FormState>({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,15 +25,15 @@ export default function Contact() {
   const validate = (): boolean => {
     const tempErrors: FormErrors = {};
     if (!form.name.trim()) tempErrors.name = 'Name is required.';
-    
+
     if (!form.email.trim()) {
       tempErrors.email = 'Email is required.';
     } else if (!/\S+@\S+\.\S+/.test(form.email)) {
       tempErrors.email = 'Please enter a valid email address.';
     }
-    
+
     if (!form.message.trim()) tempErrors.message = 'Message is required.';
-    
+
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
@@ -58,7 +58,7 @@ export default function Contact() {
       setIsSubmitting(false);
       setIsSuccess(true);
       setForm({ name: '', email: '', message: '' });
-      
+
       // Clear success notification after 5 seconds
       setTimeout(() => setIsSuccess(false), 5000);
     }, 1500);
@@ -87,7 +87,7 @@ export default function Contact() {
               </div>
               <div className="contact-detail-content">
                 <h4>Email Me</h4>
-                <p>fred.kiboga.dev@example.com</p>
+                <p>fredkibogaa@gmail.com</p>
               </div>
             </div>
 
